@@ -5,6 +5,8 @@ import { brainwave } from "../../public/assets";
 import { navigation } from "../constants";
 import { useState } from "react";
 import Button from "./Button";
+import { HamburgerMenu } from "./design/Header";
+import MenuSvg from "../../public/assets/svg/MenuSvg";
 
 const Header = () => {
   const pathname = useLocation();
@@ -12,10 +14,10 @@ const Header = () => {
 
   const toggleNavigation = () => {
     if (openNavigation) {
-      setOpenNavigation(false);
+      setOpenNavigation(true);
       enablePageScroll();
     } else {
-      setOpenNavigation(true);
+      setOpenNavigation(false);
       disablePageScroll();
     }
   };
@@ -60,6 +62,7 @@ const Header = () => {
               </a>
             ))}
           </div>
+          <HamburgerMenu />
         </nav>
 
         <a
@@ -76,7 +79,9 @@ const Header = () => {
           className="ml-auto lg:hidden"
           px="px-3"
           onClick={toggleNavigation}
-        ></Button>
+        >
+          <MenuSvg openNavigation={openNavigation} />
+        </Button>
       </div>
     </div>
   );
