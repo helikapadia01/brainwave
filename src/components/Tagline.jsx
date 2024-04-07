@@ -11,6 +11,3 @@ const Tagline = ({ className, children }) => {
 };
 
 export default Tagline;
-{
-  className, children;
-}
