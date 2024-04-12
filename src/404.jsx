@@ -1,5 +1,3 @@
-
-
 const Page404 = () => {
   return (
     <div>
